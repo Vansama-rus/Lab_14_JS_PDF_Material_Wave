@@ -5,9 +5,311 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: Arial, sans-serif;
+      }
+
+      body {
+          background-color: #f5f5f5;
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+      }
+
+      .resume {
+          width: 800px;
+          background: white;
+          padding: 20px;
+          display: grid;
+          grid-template-areas:
+              "header header"
+              "languages languages"
+              "education interests"
+              "experience tools"
+              "footer footer";
+          grid-gap: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+          grid-area: header;
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          background: #f9f9f9;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .header img {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          margin-right: 20px;
+      }
+
+      .header-text h1 {
+          font-size: 28px;
+          margin-bottom: 5px;
+          color: #333;
+      }
+
+      .header-text h2 {
+          font-size: 18px;
+          color: #666;
+      }
+
+      .languages {
+          grid-area: languages;
+          background: #e0e0e0;
+          padding: 15px;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .languages h3 {
+          font-size: 20px;
+          margin-bottom: 10px;
+          color: #333;
+      }
+
+      .languages span {
+          display: flex;
+          align-items: center;
+          margin: 8px 0;
+      }
+
+      .languages .bar {
+          height: 10px;
+          background: #4caf50;
+          border-radius: 5px;
+          margin-left: 10px;
+          flex-grow: 1;
+      }
+
+      .education, .interests, .experience, .tools {
+          background: #f9f9f9;
+          padding: 15px;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .education h3, .interests h3, .experience h3, .tools h3 {
+          font-size: 20px;
+          margin-bottom: 10px;
+          color: #333;
+      }
+
+      .card {
+          background: white;
+          padding: 10px;
+          margin: 10px 0;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .card.most-recent {
+          background: #e6ffe6;
+      }
+
+      .card h4 {
+          font-size: 18px;
+          color: #4caf50;
+          margin-bottom: 5px;
+      }
+
+      .card h5 {
+          font-size: 16px;
+          color: #333;
+          margin-bottom: 5px;
+      }
+
+      .card p, .card ul {
+          font-size: 14px;
+          color: #666;
+      }
+
+      .card ul {
+          list-style-type: disc;
+          padding-left: 20px;
+      }
+
+      .interests-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+      }
+
+      .interests-grid span {
+          background: #fff;
+          padding: 20px 12px;
+          border-radius: 15px;
+          border: 1px solid #ccc;
+          text-align: center;
+          font-size: 14px;
+      }
+
+      .tools {
+          grid-area: tools;
+          min-height: 150px;
+      }
+
+      .tools-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 100px;
+          margin-bottom: 300px;
+      }
+
+      .tools-grid img {
+          width: 50px;
+          height: 50px;
+      }
+
+      .download-btn {
+          margin: 10px auto 0;
+          padding: 8px 15px;
+          background: #4caf50;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          width: 150px;
+          display: block;
+          font-size: 14px;
+      }
+
+      .download-btn:hover {
+          background: #45a049;
+      }
+
+      .footer {
+          grid-area: footer;
+          text-align: center;
+          background: #333;
+          color: white;
+          padding: 15px;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .footer p {
+          font-size: 14px;
+          margin: 5px 0;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="./js/main.js"></script>
+    <div id="app">
+      <div class="resume">
+        <div class="header">
+          <div class="header-text">
+            <img src="img/Jamal.png" alt="Фото профиля">
+            <h1 contenteditable="true">Jamal</h1>
+            <h2 contenteditable="true">Brand/Logo Designer</h2>
+          </div>
+        </div>
+        <div class="languages">
+          <h3>Languages</h3>
+          <span>English <div class="bar" style="width: 100px;"></div></span>
+          <span>Spanish <div class="bar" style="width: 80px;"></div></span>
+          <span>French <div class="bar" style="width: 60px;"></div></span>
+        </div>
+        <div class="education">
+          <h3>Education</h3>
+          <div class="card">
+            <h4>2024</h4>
+            <p contenteditable="true">UX/UI #Research #DesignSystem #Agile #Wireframing #Figma</p>
+            <p contenteditable="true">Coursera</p>
+          </div>
+          <div class="card">
+            <h4>2022</h4>
+            <p contenteditable="true">Product Designer #Analytics #Research #Prototypes</p>
+            <p contenteditable="true">Coursera</p>
+          </div>
+          <div class="card">
+            <h4>2017-2021</h4>
+            <p contenteditable="true">Graphic Design #Illustration #Adobe</p>
+            <p contenteditable="true">Coil Institute of the Arts</p>
+          </div>
+        </div>
+        <div class="interests">
+          <h3>Interests</h3>
+          <div class="interests-grid">
+            <span contenteditable="true">branding</span>
+            <span contenteditable="true">brand identity</span>
+            <span contenteditable="true">logo</span>
+            <span contenteditable="true">typography</span>
+            <span contenteditable="true">photography</span>
+            <span contenteditable="true">poster design</span>
+            <span contenteditable="true">research</span>
+            <span contenteditable="true">designing</span>
+            <span contenteditable="true">social networks</span>
+            <span contenteditable="true">illustration</span>
+          </div>
+        </div>
+        <div class="experience">
+          <h3>Experience</h3>
+          <div class="card most-recent">
+            <h4>Jul. 2023 - Ago. 2023</h4>
+            <h5>Senior Graphic Designer</h5>
+            <p contenteditable="true">Pinnacle | Full-time</p>
+            <ul contenteditable="true">
+              <li>Research and brainstorm various design ideas for content and marketing.</li>
+              <li>Review the work submitted by Junior Designers and sharing feedback.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Ene. 2021 - Jul. 2023</h4>
+            <h5>Graphic / Web Designer</h5>
+            <p contenteditable="true">Double Square | Full-time</p>
+            <ul contenteditable="true">
+              <li>Development of internal projects from scratch, product design.</li>
+              <li>Landing pages, web pages and hybrid apps.</li>
+              <li>Taking decisions with stakeholders for the future of products such as Boggle tabs, myvu.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Feb. 2021 - Jul. 2023</h4>
+            <h5>Graphic Designer</h5>
+            <p contenteditable="true">Freelance</p>
+            <ul contenteditable="true">
+              <li>Visual design for Events, Brands and Products.</li>
+              <li>Product design, Packaging Design.</li>
+              <li>Logo Design.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tools">
+          <h3>Tools</h3>
+          <div class="tools-grid">
+            <img src="img/Figma.png" alt="Figma">
+            <img src="img/Photoshop.png" alt="Photoshop">
+            <img src="img/Illustrator.png" alt="Illustrator">
+            <img src="img/premiere.png" alt="Premiere">
+            <img src="img/Notion.png" alt="Notion">
+            <img src="img/Google Meet.png" alt="Google Meet">
+        
+          </div>
+          <button class="download-btn" onclick="downloadPDF()">Скачать PDF</button>
+        </div>
+        <div class="footer">
+          <p contenteditable="true">Let's chat! I'm ready to work on exciting projects</p>
+          <p contenteditable="true">iwannitbig@gmail.com | +22 666 666 666</p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      function downloadPDF() {
+        const element = document.querySelector('.resume');
+        html2pdf().from(element).save('resume.pdf');
+      }
+    </script>
   </body>
 </html>
